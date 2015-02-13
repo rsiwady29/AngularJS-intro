@@ -27,7 +27,10 @@
 	<br />
 	<br />
 	
+	<hr />
+	<h1> VIEWS </h1>
 	<div ng-view> </div> 
+	<hr />
 
 	<br />
 	<br />
@@ -66,12 +69,20 @@
 
 		angular.module('Controladores', []);		
 		angular.module('Controladores').controller('Carro', 
-			function($scope){
+			function($scope, $http){
 				$scope.NombreCarro = 'Ferrari';	
 				
 				$scope.limpiar = function(){
 					$scope.NombreCarro = '';						
 				};			
+
+				$http.get('http://127.0.0.1:8000/wow')
+					.success(function(r){
+						$scope.NombreCarro = r.Nombre;
+					})
+					.error(function(noo){
+						alert(noo);
+					});
 			});
 
 		angular.module('Controladores').controller('Animales', 

@@ -1,0 +1,11 @@
+<h1> Bienvenidos a mi blog :) </h1>
+
+<a href="#/crearPost"> Crear post </a>
+
+<ul>
+	<li ng-repeat="post in posts">
+		{{post.Title}} 
+		<button ng-click="update(post.objectId)"> Edit </button>
+		<button ng-click="delete(post.objectId)"> Delete </button>
+	</li>
+</ul>
