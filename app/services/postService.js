@@ -2,7 +2,7 @@ angular.module('Services')
 	.factory('postService', 
 		function($http){
 
-			var baseUrl = 'http://127.0.0.1:8000';
+			var baseUrl = 'https://angular-tuto.herokuapp.com';
 			var postService = {};
 
 			postService.crearPost = function(post){
